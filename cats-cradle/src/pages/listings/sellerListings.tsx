@@ -5,10 +5,13 @@ export default function SellerListings(listings:any) {
         <div>
             <ul>
                 {listings.map((listing: any) => (
+                    <li>
                         <div>
-                            <li>{listing.name}</li>
-                            <Link href="/listings/itemListing">View Listing</Link>
+                            <Link href={`/listings/itemListing/${encodeURIComponent(listing.listing_uuid)}`}>{listing.name}</Link>
+                            <p>{listing.description}</p>
+                            <p>{listing.price}</p>
                         </div>
+                    </li>
                     )
                 )}
             </ul>
