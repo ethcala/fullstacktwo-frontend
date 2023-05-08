@@ -1,5 +1,7 @@
-export default function ListingDetail() {
-    return <div></div>
+export default function ListingDetail(id:string) {
+    return (<div>
+
+    </div>)
 }
 
 export async function getStaticPaths() {
@@ -10,7 +12,7 @@ export async function getStaticPaths() {
     };
 }
 
-export async function getStaticProps({ params }) {
+export async function getStaticProps(params:any) {
 
 }
 
