@@ -1,22 +1,12 @@
-export default function ListingDetail(id:string) {
+export default function Listing(content:any) {
     return (<div>
-
+        {content}
     </div>)
-}
-
-export async function getStaticPaths() {
-    const paths = getSellerListingIds();
-    return {
-        paths,
-        fallback: false,
-    };
-}
+};
 
 export async function getStaticProps(params:any) {
-
-}
-
-// get all listing ids from getSellerIds
-export function getSellerListingIds() {
-    // link to api
-}
+    const listing = await fetch("https://thecatscradle.azurewebsites.net/listing/" + params.listing_uuid);
+    return {
+        props: { ...listing }
+    };
+};
