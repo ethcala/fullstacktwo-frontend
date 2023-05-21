@@ -22,6 +22,8 @@ export default function Home() {
           <p>
             Give your items a cozy home while you sell them by hosting with Cat's Cradle.
           </p>
+          <p>Search by listings and shops, and save your favourite items.</p>
+          <p>Intuitive item hosting for sellers.</p>
         </div>
         <Footer />
       </main>

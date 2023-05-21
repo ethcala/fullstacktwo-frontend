@@ -5,7 +5,8 @@ import { useState } from "react";
 export default function Account() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    let user = null;
+    let user = "Bill";
+
     async function login(event:any) {
         event.preventDefault();
         fetch("https://thecatscradle.azurewebsites.net/login", {
@@ -44,10 +45,43 @@ export default function Account() {
             </div>
         )
     } else {
-        <div>
-            <Header current="Account" />
-
-            <Footer />
-        </div>        
+        return (
+            <div>
+                <Header current="Account" />
+                <div>
+                    <h3>Welcome, {user}</h3>
+                    <div className="border-all">
+                        <h4>User Settings</h4>
+                        <form>
+                            <div className="row space-evenly">
+                                <div className="row">
+                                    <input type="radio" name="mode" id="light" />
+                                    <label htmlFor="light">Light Mode</label>
+                                    
+                                </div>
+                                <div className="row">
+                                    <input type="radio" name="mode" id="dark" />
+                                    <label htmlFor="dark">Dark Mode</label>
+                                    
+                                </div>
+                            </div>
+                        </form>
+                        <h4>Shop Settings</h4>
+                        <p>Leave blank if you are not a seller.</p>
+                        <form>
+                            <div className="row space-evenly">
+                                <label htmlFor="shopname">Shop Name</label>
+                                <input type="text" name="shopname" id="shopname" />
+                            </div>
+                            <div className="row space-evenly">
+                                <label htmlFor="slogan">Slogan</label>
+                                <input type="text" name="slogan" id="slogan" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <Footer />
+            </div>   
+        )     
     }
 }
