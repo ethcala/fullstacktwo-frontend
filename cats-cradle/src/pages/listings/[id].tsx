@@ -4,6 +4,10 @@ export default function Listing(content:any) {
     </div>)
 };
 
+export async function getStaticPaths() {
+
+}
+
 export async function getStaticProps(params:any) {
     const listing = await fetch("https://thecatscradle.azurewebsites.net/listing/" + params.listing_uuid);
     return {
