@@ -28,6 +28,9 @@
     a {
         @include no-deco();
     }
+    p {
+        cursor: pointer;
+    }
 }
 
 @mixin button {
