@@ -1,23 +1,16 @@
-@import 'basic/reset';
+//@import 'basic/reset';
 @import 'basic/color';
-@import 'basic/fonts';
+//@import 'basic/fonts';
 @import 'basic/positions';
-@import 'basic/transitions';
-@import 'mixins';
+//@import 'basic/transitions';
+//@import 'mixins';
 @import 'borders';
-@import 'buttons';
+//@import 'buttons';
 @import 'badges';
-@import 'tables';
-@import 'forms';
-@import 'prebuilts';
+//@import 'tables';
+//@import 'forms';
+//@import 'prebuilts';
 @import 'thisproject';
-
-html {
-    background-color: $bg-light;
-    color: $bg-dark;
-    font-family: $font-basic;
-    overflow-x: hidden;
-}
 
 .page-container {
     min-height: 100vh;
@@ -32,35 +25,6 @@ html {
     margin: 0;
 }
 
-container {
-    margin: $base-margin;
-    padding: $base-padding;
-}
-
-div {
-    margin: .5rem;
-    padding: inherit;
-}
-
-a {
-    color: $bg-dark;
-}
-
-img {
-    border: 2px solid $bg-dark;
-    margin: .5rem;
-    border-radius: 3px;
-}
-
-.msg-holder {
-    @include transition(opacity, 2s);
-    font-size: 16pt;
-    font-style: italic;
-    margin: .5rem auto;
-    width: 40%;
-    opacity: 0;
-    text-align: center;
-}
 
 .no-img-style {
     border: none;
@@ -89,146 +53,11 @@ img {
     display: none;
 }
 
-// Code
-.code-light {
-    @include code;
-    background-color: $bg-light;
-    border-color: darken($bg-light, 20%);
-    color: $txt-dark;
-}
-
-.code-dark {
-    @include code;
-    background-color: $bg-dark;
-    border-color: black;
-    color: $txt-light;
-}
 
 // Navbar, headers, footers
 
-header {
-    margin: auto;
-    padding: .25rem .5rem;
-    background-color: $bg-dark;
-    color: white;
-    border-bottom: 1px solid $bg-dark;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    h1, h2, h3, h4, h5, h6 {
-        font-family: $font-header, Times, serif;
-        font-size: 20pt;
-    }
-    p {
-        font-family: $font-basic, Arial, sans-serif;
-        font-size: 16pt;
-    }
-    &.header-light {
-        background-color: white;
-        color: $txt-dark;
-    }
-}
 
-footer {
-    margin: 0;
-    padding: .15rem .5rem;
-    background-color: $bg-dark;
-    color: white;
-    height: 35px;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    h1, h2, h3, h4, h5, h6 {
-        font-family: $font-header, Times, serif;
-        font-size: 16pt;
-    }
-    p {
-        font-family: $font-basic, Arial, sans-serif;
-        font-size: 12pt;
-    }
-    &.footer-light {
-        background-color: white;
-        color: $txt-dark;
-    }
-}
 
-.nav-light {
-    @include nav;
-    background: white;
-    p:not(.active) {
-        color: $txt-d-inactive;
-        a {
-            color: $txt-d-inactive;
-        }
-        a:hover {
-            color: $txt-dark;
-        }
-    }
-    p.disabled {
-        color: $txt-d-disabled;
-        a {
-            color: $txt-d-disabled;
-        }
-    }
-    p.nav-title {
-        color: $txt-dark;
-        a {
-            color: $txt-dark;
-        }
-    }
-    p.active {
-        color: $txt-dark;
-        font-weight: 500;
-        a {
-            color: $txt-dark;
-        }
-    }
-    .nav-icon {
-        color: $txt-dark;
-        font-size: 16pt;
-    }
-}
-
-.nav-dark {
-    @include nav;
-    background: $bg-dark;
-    p:not(.active) {
-        color: $txt-l-inactive;
-        a {
-            color: $txt-l-inactive;
-        }
-        a:hover {
-            color: $txt-light;
-        }
-    }
-    p.disabled {
-        color: $txt-l-disabled;
-        a {
-            color: $txt-l-disabled;
-        }
-    }
-    p.nav-title {
-        color: $txt-light;
-        a {
-            color: $txt-light;
-        }
-    }
-    .active {
-        color: $txt-light;
-        font-weight: 500;
-        a {
-            color: $txt-light;
-        }
-    }
-    .nav-icon {
-        color: $txt-light;
-        font-size: 16pt;
-    }
-}
 
 .items-right {
     position: relative;
