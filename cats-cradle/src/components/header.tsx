@@ -1,7 +1,15 @@
-export default function Header() {
+export default function Header(params:any) {
     return (
-        <div>
-            <h1>Cat's Cradle</h1>
+        <div className="navbar nav-light">
+            <div className="item-holder">
+                <p className="nav-title">Cat's Cradle</p>
+                <p className="nav-item">Home</p>
+                <p className="nav-item">Search</p>
+                <p className="nav-item">Account</p>
+            </div>
+            <a href="javascript:void(0);" className="nav-icon">
+                <i className="fa fa-bars"></i>
+            </a>
         </div>
     )
 }

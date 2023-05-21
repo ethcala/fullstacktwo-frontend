@@ -7,7 +7,7 @@ export default function Search() {
                     <label htmlFor="sellers">Sellers</label>
                 </div>
                 <div className="row">
-                    <input type="radio" id="listings" name="type" value="listings" checked />
+                    <input type="radio" id="listings" name="type" value="listings" defaultChecked />
                     <label htmlFor="listings">Listings</label>
                 </div>
                 <div className="row">
