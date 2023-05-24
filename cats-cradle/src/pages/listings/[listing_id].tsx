@@ -1,6 +1,6 @@
 import axios from 'axios';
 import { useRouter } from 'next/router';
-import { useEffect, useState } from 'react';
+import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from 'react';
 
 export default function Listing() {
     const router = useRouter();
@@ -17,10 +17,37 @@ export default function Listing() {
         const response = await axios.get(`https://thecatscradle.azurewebsites.net/listing/${id}`)
         setListing(response.data);
         console.log(response.data)
+        console.log("keys",Object.keys(response.data.options))
     }
-    return (<p>
-        {listing.listing_name}
-    </p>)
+    if (listing.listing_name){
+    return (
+        <div>
+            <h2>{listing.listing_name}</h2>
+            <p>{listing.listing_description}</p>
+            <p><a>{listing.seller_name}</a></p>
+            <div>
+                <div>
+                    <h3>Tags:</h3>
+                    <div><ul>{listing.tags.map((tag: string) => (
+                        <li><a>{tag}</a></li>
+                    ))}</ul></div>
+                </div>
+                {/* <div>
+                    <h3>Options:</h3>
+                    <div>{Object.keys(listing.options).map(key => (
+                        <div>
+                            <p>{key}</p>
+                            <select>{
+                                listing.options[key].map((o:any) => (
+                                    <option>{o.name} (+${o.price})</option>
+                                ))
+                            }</select>
+                        </div>
+                    ))}</div>
+                </div> */}
+            </div>
+        </div>
+    )}
 };
 
 // export async function getStaticProps(params:any) {
