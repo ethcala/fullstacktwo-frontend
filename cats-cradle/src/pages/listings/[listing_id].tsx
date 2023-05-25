@@ -26,12 +26,12 @@ export default function Listing() {
             <Header current="Search" />
             <h2>{listing.listing_name}</h2>
             <p>{listing.listing_description}</p>
-            <p><a>{listing.seller_name}</a></p>
+            <p>{listing.seller_name}</p>
             <div>
                 <div>
                     <h3>Tags:</h3>
                     <div><ul>{listing.tags.map((tag: string) => (
-                        <li><a>{tag}</a></li>
+                        <li>{tag}</li>
                     ))}</ul></div>
                 </div>
                 {/* <div>

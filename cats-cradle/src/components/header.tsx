@@ -22,9 +22,6 @@ export default function Header(current:any) {
                     : <p className="nav-item"><Link href="/account">Account</Link></p>
                 }
             </div>
-            <a href="javascript:void(0);" className="nav-icon">
-                <i className="fa fa-bars"></i>
-            </a>
         </div>
     )
 }
