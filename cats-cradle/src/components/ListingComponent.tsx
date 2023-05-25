@@ -1,6 +1,6 @@
 import React from 'react'
 
-const ListingComponent = (props) => {
+const ListingComponent = (props:any) => {
   return (
     <div>
       <h3>{props.listinginfo.listing_name}</h3>
