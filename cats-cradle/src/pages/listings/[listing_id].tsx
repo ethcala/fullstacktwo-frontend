@@ -1,3 +1,4 @@
+import Header from '@/components/header';
 import axios from 'axios';
 import { useRouter } from 'next/router';
 import { JSXElementConstructor, ReactElement, ReactFragment, ReactPortal, useEffect, useState } from 'react';
@@ -22,6 +23,7 @@ export default function Listing() {
     if (listing.listing_name){
     return (
         <div>
+            <Header current="Search" />
             <h2>{listing.listing_name}</h2>
             <p>{listing.listing_description}</p>
             <p><a>{listing.seller_name}</a></p>

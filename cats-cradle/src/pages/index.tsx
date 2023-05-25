@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Cat's Cradle</title>
+        <title>Cat's Cradle | Home</title>
         <meta name="description" content="A home for buyers and sellers" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
