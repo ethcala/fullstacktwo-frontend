@@ -20,7 +20,7 @@ export default function Listing() {
         console.log(response.data)
         console.log("keys",Object.keys(response.data.options))
     }
-    if (listing.listing_name){
+    if (listing?.listing_name){
     return (
         <div>
             <Header current="Search" />
@@ -28,13 +28,13 @@ export default function Listing() {
             <p>{listing.listing_description}</p>
             <p>{listing.seller_name}</p>
             <div>
-                <div>
+                {listing?.listing_tags ? <div>
                     <h3>Tags:</h3>
                     <div><ul>{listing.tags.map((tag:any) => (
                         <li><a>{tag.name}</a></li>
                     ))}</ul></div>
-                </div>
-                <div>
+                </div> : <></>}
+                {listing?.listing_options ? <div>
                     <h3>Options:</h3>
                     <div>{Object.keys(listing.options).map(key => (
                         <div>
@@ -46,7 +46,7 @@ export default function Listing() {
                             }</select>
                         </div>
                     ))}</div>
-                </div>
+                </div> : <></>}
             </div>
         </div>
     )}
