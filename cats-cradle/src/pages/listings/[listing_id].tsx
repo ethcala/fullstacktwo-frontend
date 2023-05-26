@@ -28,13 +28,13 @@ export default function Listing() {
             <p>{listing.listing_description}</p>
             <p>{listing.seller_name}</p>
             <div>
-                {listing?.listing_tags?.length ? <div>
+                {listing?.tags?.length ? <div>
                     <h3>Tags:</h3>
                     <div><ul>{listing.tags.map((tag:any) => (
                         <li><a>{tag.name}</a></li>
                     ))}</ul></div>
                 </div> : <></>}
-                {listing?.listing_options?.length ? <div>
+                {listing?.options ? <div>
                     <h3>Options:</h3>
                     <div>{Object.keys(listing.options).map(key => (
                         <div>
