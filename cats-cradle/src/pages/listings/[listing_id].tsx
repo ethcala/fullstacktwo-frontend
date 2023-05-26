@@ -28,11 +28,11 @@ export default function Listing() {
             <div>
                 <div>
                     <h3>Tags:</h3>
-                    <div><ul>{listing.tags.map((tag: string) => (
-                        <li><a>{tag}</a></li>
+                    <div><ul>{listing.tags.map((tag:any) => (
+                        <li><a>{tag.name}</a></li>
                     ))}</ul></div>
                 </div>
-                {/* <div>
+                <div>
                     <h3>Options:</h3>
                     <div>{Object.keys(listing.options).map(key => (
                         <div>
@@ -44,7 +44,7 @@ export default function Listing() {
                             }</select>
                         </div>
                     ))}</div>
-                </div> */}
+                </div>
             </div>
         </div>
     )}
