@@ -1,16 +1,11 @@
-export default function SearchResults(searchTerm: any) {
-    const [results, setResults] = ();
+import React from 'react'
 
-    
+const searchresults = () => {
+  return (
+    <div>
+        Search Results go Here
+    </div>
+  )
 }
 
-export function getStaticProps() {
-    
-}
-
-export async function SearchListings(searchTerm:any) {
-    fetch(`https://thecatscradle.azurewebsites.net/search?q=${searchTerm}`, {  // change this
-        method: "GET",
-        headers: { "Content-Type": "application/json" }
-    }).catch((err) => console.log(err));
-}
+export default searchresults

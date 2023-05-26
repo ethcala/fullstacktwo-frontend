@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import SearchResults from "@/components/searchresults";
 
 export default function Search() {
     return (
@@ -19,6 +20,7 @@ export default function Search() {
                         <input className="w-100 mb-1" type="text" name="search" id="search"></input>
                         <button type="submit">Search</button>
                     </div>
+                    <SearchResults/>
                 </form>
             </div>
             <Footer />
