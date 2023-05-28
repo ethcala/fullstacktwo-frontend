@@ -6,13 +6,13 @@ export default function Search() {
     return (
         <div>
             <Header current="Search" />
-            <div className="center-x">
+            <div className="search-form">
                 <form action="/search-info" method="post">
-                    <div className="row">
+                    <div className="rows">
                         <input type="radio" id="sellers" name="type" value="sellers" />
                         <label htmlFor="sellers">Sellers</label>
                     </div>
-                    <div className="row">
+                    <div className="rows">
                         <input type="radio" id="listings" name="type" value="listings" defaultChecked />
                         <label htmlFor="listings">Listings</label>
                     </div>
