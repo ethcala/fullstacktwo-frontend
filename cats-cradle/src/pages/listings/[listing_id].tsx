@@ -1,5 +1,6 @@
 import Header from '@/components/header';
 import axios from 'axios';
+import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -12,6 +13,11 @@ export default function Listing() {
     const [orderData,setOrderData]:any = useState({buyer_id:12,quantity:0})
     const [optionsChosen,setOptionsChosen]:any = useState({})
     const [price,setPrice]:any = useState(0)
+
+    const sendData =() => {
+        console.log("Sending Data:", orderData);
+        //Send orderData to /orders
+    }
 
     useEffect(() => {
         if (id)
@@ -73,7 +79,7 @@ export default function Listing() {
                     ))}</div>
                 </div> : <></>}
                 <input type='number' min="0" max="10" name="quantity" value={orderData.quantity} onChange={(evt) => setOrderData({...orderData,quantity:evt.target.value})} />
-                <button>Buy</button>
+                <button onClick={sendData} id="buybtn">Buy</button>
             </div>
         </div>
     )}
