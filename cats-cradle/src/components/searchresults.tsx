@@ -1,9 +1,9 @@
 import React from 'react'
 
-const searchresults = () => {
+const searchresults = (data: any) => {
   return (
     <div>
-        Search Results go Here
+          {...data}
     </div>
   )
 }
