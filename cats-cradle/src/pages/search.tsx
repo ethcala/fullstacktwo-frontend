@@ -9,6 +9,7 @@ export default function Search() {
     const [result, setResult] = useState(null);
     async function doSearch() {
         const response = await axios.get(`https://thecatscradle.azurewebsites.net/search?q=` + search);
+        console.log("RESPONSE: " + response);
         setResult(response.data);
     }
 
@@ -16,7 +17,7 @@ export default function Search() {
         <div>
             <Header current="Search" />
             <div className="search-form">
-                <form action="/search-info" method="post">
+                <form>
                     <div className="rows">
                         <input type="radio" id="sellers" name="type" value="sellers" />
                         <label htmlFor="sellers">Sellers</label>
