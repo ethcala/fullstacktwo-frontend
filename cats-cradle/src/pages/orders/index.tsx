@@ -5,7 +5,7 @@ const Orders = () => {
     <div>
       Orders should be displayed
       <p>Buyer ID: </p>
-      <p>ID: </p>
+      <p>Listing ID: </p>
       <p>Quantity: </p>
     </div>
   );
