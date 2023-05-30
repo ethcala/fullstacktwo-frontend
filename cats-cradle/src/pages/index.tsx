@@ -10,6 +10,7 @@ import {useEffect, useState } from 'react'
 import axios from 'axios'
 import { useRouter } from 'next/router'
 import ListingComponent from '@/components/ListingComponent'
+import { redirect } from 'next/navigation';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -26,6 +27,7 @@ export default function Home() {
       const response = await axios.get(`https://thecatscradle.azurewebsites.net/all-listings/`)
       setListing(response.data);
       console.log(response.data)
+      redirect('/orders/12')
   }
   if (listings[0]){
     return (

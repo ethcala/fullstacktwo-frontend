@@ -14,8 +14,11 @@ export default function Listing() {
     const [optionsChosen,setOptionsChosen]:any = useState({})
     const [price,setPrice]:any = useState(0)
 
-    const sendData =() => {
+    const sendData = async () => {
         console.log("Sending Data:", orderData);
+        const response = await axios.post("https://thecatscradle.azurewebsites.net/listing",orderData)
+        console.log(response);
+        
         //Send orderData to /orders
     }
 
