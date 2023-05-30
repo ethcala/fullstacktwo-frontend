@@ -16,7 +16,7 @@ export default function Search() {
                         <input type="radio" id="listings" name="type" value="listings" defaultChecked />
                         <label htmlFor="listings">Listings</label>
                     </div>
-                    <div className="stack">
+                    <div className="together">
                         <input className="w-100 mb-1" type="text" name="search" id="search"></input>
                         <button type="submit">Search</button>
                     </div>
