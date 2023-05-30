@@ -52,7 +52,6 @@ export default function Listing() {
         console.log({...orderData,options:ids})
         setOrderData({...orderData,options:ids})
     }
-
     if (listing?.listing_name){
     return (
         <div>

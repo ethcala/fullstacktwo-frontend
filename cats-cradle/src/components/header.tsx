@@ -3,8 +3,8 @@ import Link from "next/link";
 export default function Header(current:any) {
 
     return (
-        <div className="navbar nav-light">
-            <div className="item-holder row">
+        <header className="navbar nav-light">
+            <div className="item-holder">
                 <p className="nav-title"><Link href="/">Cat's Cradle</Link></p>
                 {
                     current == "Home" 
@@ -25,6 +25,6 @@ export default function Header(current:any) {
             <a href="" className="nav-icon">
                 <i className="fa fa-bars"></i>
             </a>
-        </div>
+        </header>
     )
 }
