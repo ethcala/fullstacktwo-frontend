@@ -18,8 +18,7 @@ export default function Search() {
     async function getSearchResults(evt:any) {
         evt.preventDefault()
         let searchText = (document.getElementById('searchText') as HTMLInputElement)?.value;
-        //let url = `https://thecatscradle.azurewebsites.net/search?q=${searchText}`;
-        let url = `http://localhost:4000/search?q=${searchText}`;
+        let url = `https://thecatscradle.azurewebsites.net/search?q=${searchText}`;
         const response = await axios.get(url);
         setData(response.data);
         console.log(data);
