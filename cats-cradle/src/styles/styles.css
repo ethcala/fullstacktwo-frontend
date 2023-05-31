@@ -154,6 +154,10 @@ body {
   -webkit-tap-highlight-color: transparent;
 }
 
+.input{
+  border-radius: 10px;
+}
+
 body::-webkit-scrollbar {
   display: none;
 }
@@ -693,6 +697,7 @@ svg {
   padding: 10px;
   margin: 10px;
   background-color: #7289da;
+  color: #EEE8D6;
   border-radius: 20px;
   cursor: pointer;
   max-width: fit-content;

@@ -1,5 +1,6 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Account() {
@@ -81,6 +82,9 @@ export default function Account() {
                                     <input className="stretch" type="text" name="slogan" id="slogan" />
                                 </div>
                             </form>
+                        </div>
+                        <div className="container">
+                        <Link href="/listings/create"><button className="button">Create Listing</button></Link>
                         </div>
                     </div>
                 </div>

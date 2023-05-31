@@ -1,6 +1,7 @@
+import Header from '@/components/header';
 import React, { useEffect, useState } from 'react'
 
-export default function CreateListing () {
+export default function CreateListing (this: any) {
     const [listingName, setListingName] = useState("");
     const [listingSellerID, setListingSellerID] = useState(12);
     const [listingDescription, setListingDescription] = useState("");
@@ -18,8 +19,6 @@ export default function CreateListing () {
     
     const createListingData = async() => {
         setListingSellerID(12)
-        setListingName("Name UwU")
-        setListingDescription("Description OwO")
         setListingPublic(true)
         setListingPrice("10.99")
         setListingOptionsName("size")
@@ -32,7 +31,7 @@ export default function CreateListing () {
             "description": listingDescription,
             "is_public": listingPublic,
             "price": listingPrice,
-            "tags": ["UwU", "OwO"],
+            "tags": [""],
             "options": {
                 [listingOptionsName]:[
                     {
@@ -62,11 +61,71 @@ export default function CreateListing () {
         // return response.json(); // parses JSON response into native JavaScript objects
     }
   return (
-    <div>
-        <form>
-            <input></input>
-        </form>
-        <button onClick={createListingData}>Click To Test</button>
+    <div >
+        <Header current="Create" />
+        <div className='container text-center'>
+            <form className='flex-col'>
+                <input
+                    type={'text'}
+                    onChange={(e)=>setListingName(e.target.value)}
+                    value={listingName}
+                    placeholder='Listing Name'
+                    className='m-1 p-0_5 input'
+                />
+                <input
+                    type={'text'}
+                    onChange={(e)=>setListingDescription(e.target.value)}
+                    value={listingDescription}
+                    placeholder='Listing Description'
+                    className='m-1 p-0_5 input'
+                />
+                <input
+                    type={'text'}
+                    onChange={(e)=>setListingPrice(e.target.value)}
+                    value={listingPrice}
+                    placeholder='Listing Price'
+                    className='m-1 p-0_5 input'
+                />
+                <div>
+                    <input
+                        type={'text'}
+                        onChange={(e)=>setListingOptionsName(e.target.value)}
+                        value={listingOptionsName}
+                        placeholder='Listing Option Category'
+                        className='m-1 p-0_5 input'
+                    />
+                    <input
+                        type={'text'}
+                        onChange={(e)=>setListingOptionsOptionName(e.target.value)}
+                        value={listingOptionsOptionName}
+                        placeholder='Listing Option Name'
+                        className='m-1 p-0_5 input'
+                    />
+                    <input
+                        type={'text'}
+                        onChange={(e)=>setListingOptionsOptionPrice(e.target.value)}
+                        value={listingOptionsOptionPrice}
+                        placeholder='Additional Price'
+                        className='m-1 p-0_5 input'
+                    />
+                </div>
+                
+                {/*
+                "description": listingDescription,
+                "is_public": listingPublic,
+                "price": listingPrice,
+                "tags": ["UwU", "OwO"],
+                "options": {
+                    [listingOptionsName]:[
+                        {
+                            "option_name":listingOptionsOptionName,
+                            "option_price":listingOptionsOptionPrice
+                        }
+                    ]
+                } */}
+            </form>
+            <button onClick={createListingData} className='button'>Click To Create!</button>
+        </div>
     </div>
   )
 }
