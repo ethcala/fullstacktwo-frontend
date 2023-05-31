@@ -27,7 +27,7 @@ export default function Home() {
       const response = await axios.get(`https://thecatscradle.azurewebsites.net/all-listings/`)
       setListing(response.data);
       console.log(response.data)
-      redirect('/orders/12')
+      /*redirect('/orders/12')*/
   }
   if (listings[0]){
     return (
