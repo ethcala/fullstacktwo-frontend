@@ -1,11 +1,12 @@
 import Footer from "@/components/footer";
 import Header from "@/components/header";
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Account() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
-    let user = "Bill";
+    let user = "Hugh";
 
     async function login(event:any) {
         event.preventDefault();
@@ -67,6 +68,7 @@ export default function Account() {
                                     </div>
                                 </div>
                             </form>
+                            <p><Link href="/orders/306e6447-376a-455a-a46a-39ae0f4d4da8">See orders</Link></p>
                         </div>
                         <div className="container">
                             <h4>Shop Settings</h4>
