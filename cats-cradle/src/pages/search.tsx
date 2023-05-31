@@ -47,7 +47,8 @@ export default function Search() {
                             <div>
                                 <Link href={'/listings/' + listing.listing_uuid}><h3>{listing.listing_name}</h3></Link>
                                 <p>{listing.listing_description}</p>
-                                <p>{listing.listing_price}</p>
+                                <p>${listing.listing_price}</p>
+                                <p>{listing.seller_name}</p>
                             </div>
                         ))
                     }

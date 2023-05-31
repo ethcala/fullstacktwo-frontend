@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React from 'react'
 
 const ListingComponent = (props:any) => {
+  console.log("props",props.listinginfo)
   return (
     <div>
       <Link href={'/listings/' + props.listinginfo.listing_uuid}><h3>{props.listinginfo.listing_name}</h3></Link>
