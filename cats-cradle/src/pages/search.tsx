@@ -5,7 +5,9 @@ import axios from 'axios';
 import { useState } from "react";
 
 export default function Search() {
-    const [data, setData] = useState([]);
+    const [data, setData]: any = useState([
+        {"listing_name": "Listing not found.", "listing_description": "Enter a search to begin", "listing_price": "Searching listings and shops."}
+    ]);
 
     async function getSearchResults(evt:any) {
         evt.preventDefault()
@@ -35,8 +37,17 @@ export default function Search() {
                         <button onClick={(evt) => getSearchResults(evt)}>Search</button>
                     </div>
                     {
-                        data != [] ? <SearchResults data={data}/> : <div>No results found.</div>
+                        data.map((listing: any) => (
+                            <div>
+                                <h3>{listing.listing_name}</h3>
+                                <p>{listing.listing_description}</p>
+                                <p>{listing.listing_price}</p>
+                            </div>
+                        ))
                     }
+                    {/*{
+                        data != [] ? <SearchResults data={data}/> : <div>No results found.</div>
+                    }*/}
                 </form>
             </div>
             <Footer />
