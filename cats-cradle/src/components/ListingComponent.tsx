@@ -8,6 +8,7 @@ const ListingComponent = (props:any) => {
       
       <h6>${props.listinginfo.listing_price}</h6>
       <p>{props.listinginfo.listing_description}</p>
+      <p>{props.listinginfo.seller_name}</p>
     </div>
   )
 }
