@@ -1,6 +1,5 @@
 import Header from '@/components/header';
 import axios from 'axios';
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
@@ -10,15 +9,15 @@ export default function Listing() {
 
     const [listing, setListing]:any = useState({})
 
-    const [orderData,setOrderData]:any = useState({buyer_id:12,quantity:0})
+    const [orderData,setOrderData]:any = useState({buyer_id:12,order_quantity:0})
     const [optionsChosen,setOptionsChosen]:any = useState({})
     const [price,setPrice]:any = useState(0)
 
     const sendData = async () => {
         console.log("Sending Data:", orderData);
-        const response = await axios.post("https://thecatscradle.azurewebsites.net/listing",orderData)
+        const response = await axios.post("https://thecatscradle.azurewebsites.net/order",orderData)
         console.log(response);
-        
+        router.push("/orders/306e6447-376a-455a-a46a-39ae0f4d4da8")
         //Send orderData to /orders
     }
 
@@ -52,7 +51,6 @@ export default function Listing() {
         console.log({...orderData,options:ids})
         setOrderData({...orderData,options:ids})
     }
-
     if (listing?.listing_name){
     return (
         <div>
@@ -81,7 +79,7 @@ export default function Listing() {
                         </div>
                     ))}</div>
                 </div> : <></>}
-                <input type='number' min="0" max="10" name="quantity" value={orderData.quantity} onChange={(evt) => setOrderData({...orderData,quantity:evt.target.value})} />
+                <input type='number' min="0" max="10" name="order_quantity" value={orderData.order_quantity} onChange={(evt) => setOrderData({...orderData,order_quantity:evt.target.value})} />
                 <button onClick={sendData} id="buybtn">Buy</button>
             </div>
         </div>
