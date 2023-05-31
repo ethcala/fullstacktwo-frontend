@@ -2,13 +2,19 @@ import Footer from "@/components/footer";
 import Header from "@/components/header";
 import SearchResults from "@/components/searchresults";
 import axios from 'axios';
+import Link from "next/link";
 import { useState } from "react";
 
 export default function Search() {
     const [data, setData]: any = useState([
-        {"listing_name": "Listing not found.", "listing_description": "Enter a search to begin", "listing_price": "Searching listings and shops."}
+        {
+            "listing_name": "Listing not found.",
+            "listing_description": "Enter a search to begin",
+            "listing_price": "Searching listings and shops.",
+            "listing_uuid": 0
+        }
     ]);
-
+    console.log(data);
     async function getSearchResults(evt:any) {
         evt.preventDefault()
         let searchText = (document.getElementById('searchText') as HTMLInputElement)?.value;
@@ -16,6 +22,7 @@ export default function Search() {
         let url = `http://localhost:4000/search?q=${searchText}`;
         const response = await axios.get(url);
         setData(response.data);
+        console.log(data);
     }
 
 
@@ -39,7 +46,7 @@ export default function Search() {
                     {
                         data.map((listing: any) => (
                             <div>
-                                <h3>{listing.listing_name}</h3>
+                                <Link href={'/listings/' + listing.listing_uuid}><h3>{listing.listing_name}</h3></Link>
                                 <p>{listing.listing_description}</p>
                                 <p>{listing.listing_price}</p>
                             </div>
