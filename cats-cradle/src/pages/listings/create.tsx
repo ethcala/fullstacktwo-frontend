@@ -1,7 +1,9 @@
 import Header from '@/components/header';
 import React, { useEffect, useState } from 'react'
+import { useRouter } from 'next/router';
 
 export default function CreateListing (this: any) {
+    const router = useRouter();
     const [listingName, setListingName] = useState("");
     const [listingSellerID, setListingSellerID] = useState(12);
     const [listingDescription, setListingDescription] = useState("");
@@ -20,10 +22,6 @@ export default function CreateListing (this: any) {
     const createListingData = async() => {
         setListingSellerID(12)
         setListingPublic(true)
-        setListingPrice("10.99")
-        setListingOptionsName("size")
-        setListingOptionsOptionName("extwa lawge")
-        setListingOptionsOptionPrice("12")
 
         let tempData = {
             "seller_id": listingSellerID,
@@ -57,7 +55,7 @@ export default function CreateListing (this: any) {
             },
             body: JSON.stringify(data), // body data type must match "Content-Type" header
             });
-        console.log("POST response:\n", JSON.stringify(response.json))
+        console.log("POST response:\n", response.json)
         // return response.json(); // parses JSON response into native JavaScript objects
     }
   return (
